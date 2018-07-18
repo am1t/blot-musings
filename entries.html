@@ -7,7 +7,7 @@
       <div class="main">
         {{#entries}}
         <div class="entry">
-          <a class="small date left margin" href="{{url}}">{{date}}</a>
+          <a class="small date left margin" href="{{url}}">{{#formatDate}} ddd, MMM D, YYYY {{/formatDate}}</a>
           {{#title}}
             <h1 class="entry-title">{{title}}</h2>
           {{/title}}
