@@ -22,7 +22,7 @@
 .push-A {margin-right: 0.04em}
 
 body {
-  font: 16px / 24px -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 16px / 24px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
   font-feature-settings: "liga";
@@ -35,7 +35,7 @@ body {
 .clear {width: 100%;clear: both;float: none;display: block;height: 0}
 
 .small,
-.caption {font-size: 13px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #999;font-weight: 500;}
+.caption {font-size: 13px;font-family: "Open Sans", "Helvetica Neue", Helvetica, Georgia, sans-serif;color: #999;font-weight: 500;}
 
 .caption {
   line-height: 18px;
@@ -78,7 +78,7 @@ div {
 .margin img,
 .column img {margin-top: 6px}
 
-.margin p {font-style: italic;font-family: Georgia;font-size: 0.9em;margin-top: 0}
+.margin p {font-style: italic;font-family: "Open Sans", "Helvetica Neue", Helvetica, Georgia;font-size: 0.9em;margin-top: 0}
 .margin h1, .margin h2, .margin h3 {margin-top:0}
 
 .left.margin {
@@ -130,7 +130,7 @@ div {
 /* TEXT */
 
 p, li {
-  font-family: -apple-system, BlinkMacSystemFont, Georgia, serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Georgia, serif;
   position: relative;
   margin: 24px 0;
 }
@@ -157,7 +157,7 @@ li .small-caps {
   font-family: "Georgia Pro SC";
 }*/
 
-big {color: #000;font-size: 32px;font-family: Georgia;line-height: 48px;display: block;}
+big {color: #000;font-size: 32px;font-family: "Open Sans", "Helvetica Neue", Helvetica, Georgia;line-height: 48px;display: block;}
 
 /* LINKS */
 
@@ -209,7 +209,7 @@ hr {width: 100%;margin: 24px auto -1px;border: none;border-bottom: 3px double #e
 /* CODE */
 
 code {
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: "Roboto Mono", Consolas, monospace;
   margin: 0;
   font-size: 85%;
   background: rgba(0,0,0,.03);
@@ -359,13 +359,44 @@ input#search {
   box-sizing: border-box;
   margin: .33em .66em 2em -1em;
   border: 1px solid #A1ADB6;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Open Sans", "Helvetica Neue",Helvetica,Arial,Georgia, sans-serif;
 }
 
 input#search:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(100, 169, 226, 0.51);
   border: 1px solid #A1ADB6;
+}
+
+.post-mentions {
+	/*background:#f0f0f0;
+    color: #666;*/
+    padding-top: 15px;
+    margin-top: 10px;
+    border-top: 1px solid #AEADAD;
+    border-bottom: 1px solid #AEADAD;
+    font-size: 16px;
+}
+.post-mentions ul {list-style:none; padding:0;}
+
+.mention{
+    font-size:16px;
+    margin:0 0 30px 0;
+}
+
+.mention-author {
+    color:#666;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.mention-social{
+    color:#666;
+    text-transform: uppercase;
+}
+
+p.mention-text{
+    margin-bottom:2px; 
 }
 
 ::-webkit-input-placeholder {
@@ -433,7 +464,7 @@ input#search:focus {
 .nextEntry .title {
   display: block;
   font-size: 1.156em;
-  font-family: sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Georgia, sans-serif;
   line-height: 20px;
   margin-bottom: 3px
 }
