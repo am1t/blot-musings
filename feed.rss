@@ -13,7 +13,7 @@
     {{! RSS feeds need a RFC 822 date}}
     <pubDate>{{#formatDate}}ddd, DD MMM YYYY HH:mm:ss ZZ{{/formatDate}}</pubDate>
     <dc:creator>Amit Gawande</dc:creator>
-    <description>{{{body}}}</description>
+    <description>{{{html}}}</description>
   </item>
   {{/recentEntries}}
 </channel>

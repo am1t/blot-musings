@@ -8,12 +8,14 @@
         <h1>Archives</h1>
         <div>
           {{#allEntries}}
-          <a href="{{url}}">{{title}}</a>&nbsp;<span class="small">{{date}}</span>
+          <a href="{{url}}">{{date}}</a> &nbsp; 
+          {{#title}} {{.}} &nbsp;{{/title}} 
+          <span class="small">{{summary}}</span>
           <br />
           {{/allEntries}}
         </div>
-        {{> footer}}
       </div>
     </div>
+    {{> footer}}    
   </body>
 </html>

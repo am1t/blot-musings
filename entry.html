@@ -36,35 +36,10 @@
             <ul class="mentions-list" id="mentions-list"></ul>
           </div>
 
-          <div class="clear"></div>
-          {{> pluginHTML}}
-          <div class="clear"></div>
-
-
-          {{#adjacent}}
-          <hr class="full" />
-          {{/adjacent}}
-
-          {{#previous}}
-          <a class="halfWidth left previousEntry" href="{{url}}">
-            <h5>Previous post</h5>
-            <span class="title">{{title}}</span>
-            <span class="summary">{{summary}}</span>
-          </a>
-          {{/previous}}
-
-          {{#next}}
-          <a class="left halfWidth nextEntry" href="{{url}}">
-            <h5>Next post</h5>
-            <span class="title">{{title}}</span>
-            <span class="summary">{{summary}}</span>
-          </a>
-          {{/next}}
-
         {{/entry}}
         </article>
-        {{> footer}}
       </div>
     </div>
+    {{> footer}}    
   </body>
 </html>
