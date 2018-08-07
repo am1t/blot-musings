@@ -19,7 +19,7 @@ $(document).ready(function(){
   		var men_content = "";
   		if(activity_type && activity_type == "like"){
   			if(!social_media_likes){
-  				social_media_likes = "<li class=\"mention-social\"><i class=\"fa fa-twitter\"></i> ";
+  				social_media_likes = "<li class=\"mention-social\"><i class=\"fa fa-thumbs-up\"></i> ";
   			}
   			social_media_likes = social_media_likes + 
   			"<a href=\"" + data.links[i].data.url + "\">"
@@ -47,10 +47,10 @@ $(document).ready(function(){
 				+ "<div class=\"mention-author\"><i class=\"fa fa-comments\"></i> <a href=\"" + data.links[i].data.author.url + "\">"
 				+ data.links[i].data.author.name + "</a> <span class=\"commented\">replied:</span></div>"
 				+ "<div class=\"mention-text\">" + men_content + "</div>"
-				+ "<div class=\"mention-date\"><a href=\"" + data.links[i].data.url + "\">"
+				+ "<a href=\"" + data.links[i].data.url + "\" class=\"small\">"
 				+ "<time>" + mention_date.getUTCDate() + "/" + (mention_date.getUTCMonth() + 1) 
 				+ "/" + mention_date.getUTCFullYear()
-			  + "</time></a></div>"
+			  + "</time></a>"
     		+ "</li>");
     	}
 		});
@@ -66,7 +66,7 @@ $(document).ready(function(){
 		}
 		if(social_media_likes){
 			social_media_likes = social_media_likes.substr(0, social_media_likes.length - 2);
-			social_media_likes = social_media_likes  + " <span class=\"commented\">liked this on Twitter.</span></li>";
+			social_media_likes = social_media_likes  + " <span class=\"commented\">liked this.</span></li>";
 			$("ul#mentions-list").prepend(social_media_likes);
 		}
 	});

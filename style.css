@@ -27,7 +27,7 @@ html {
 } 
 
 body {
-  font: 16px / 24px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 16px / 28px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
   font-feature-settings: "liga";
@@ -67,8 +67,9 @@ div {
 .header {margin-top: 48px;margin-bottom: 72px}
 .main {max-width: 60%;min-width: 600px}
 .container {max-width: 1000px}
-.entry {margin: 72px 0 120px}
+.entry {margin: 48px 0 48px}
 .entry-title {font-size:22px; padding-bottom: 5px; border-bottom: 2px solid #e24e42;}
+.link-title { font-size: 18px; font-weight: 400; color:#e24e42; text-decoration: underline;}
 /* LAYOUT */
 
 .margin {
@@ -307,11 +308,19 @@ ul, ol {
   margin-bottom: 24px;
 }
 
-ul {list-style: circle;}
+.mf-data {
+  padding: 5px 0px; 
+  margin: 5px 0;
+  text-decoration: underline;
+  color: #666;
+}
+
+.mf-data a { color: #0366D6; }
+.mf-data a:hover { color: #E24E42; }
 
 ul ul, ol ul, ol ol, ul ol {margin-left: 1.33em;margin-bottom: 0}
 
-li {margin: 0}
+li {margin: 0; padding:5px 0;}
 
 /* IMAGES */
 
@@ -369,8 +378,9 @@ iframe {width: 100%;}
 #logo img.rounded {width: 52px;border-radius: 50%;top: -2px;left: -64px}
 #logo img:active {margin-top: 1px}
 
-note { background: #fff5b8; border-left: 2px solid #e24e42; padding-left: 10px; margin-right: 5px; }
-
+note { background: #fff5b8; }
+.note { background: #fff5b8; border-left: 2px solid #e24e42; padding-left: 10px; margin-right: 5px; }
+.icn { color: #aeadad; text-decoration: none;}
 /* Nav links are underlined which affects their optical lineheight */
 nav {
 	padding-top: 0;
@@ -446,7 +456,13 @@ input#search:focus {
 }
 
 .mention-text p {
-    margin-bottom:2px; 
+  margin-top: 10px; 
+  margin-bottom:2px; 
+}
+
+.commented {
+  color:#666;
+  text-transform: none;
 }
 
 ::-webkit-input-placeholder {

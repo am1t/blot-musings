@@ -4,16 +4,25 @@
   <title>{{{title}}}</title>
   <link>{{blogURL}}</link>
   <atom:link href="{{blogURL}}/feed.rss" rel="self" type="application/rss+xml"/>
-  <description><![CDATA[ Feed of updates on experiements from Amit Gawande ]]></description>
+  <description><![CDATA[ Blog by Amit Gawande ]]></description>
   {{#recentEntries}}
   <item>
-    <title><![CDATA[ {{{title}}} ]]></title>
+    <title><![CDATA[ {{{title}}}{{#metadata.in-reply-to}}{{#title}} →{{/title}}{{/metadata.in-reply-to}} ]]></title>
     <link>{{{blogURL}}}{{url}}</link>
     <guid>{{{blogURL}}}{{url}}</guid>
     {{! RSS feeds need a RFC 822 date}}
     <pubDate>{{#formatDate}}ddd, DD MMM YYYY HH:mm:ss ZZ{{/formatDate}}</pubDate>
     <dc:creator>Amit Gawande</dc:creator>
-    <description>{{{html}}}</description>
+    <description>
+      {{#metadata.in-reply-to}}{{^title}} 
+        ➥ In reply to &lt;a href="{{metadata.in-reply-to}}"&gt;
+        {{#metadata.in-reply-to-title}}{{metadata.in-reply-to-title}}{{/metadata.in-reply-to-title}}
+        {{^metadata.in-reply-to-title}}a post{{/metadata.in-reply-to-title}}
+        &lt;/a&gt;
+      {{/title}}{{/metadata.in-reply-to}}
+      {{#metadata.like-of}} ★ Liked &lt;a href="{{metadata.like-of}}"&gt;{{metadata.like-of}}&lt;/a&gt;{{/metadata.like-of}}
+      {{{html}}}
+    </description>
   </item>
   {{/recentEntries}}
 </channel>

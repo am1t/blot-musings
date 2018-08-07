@@ -18,8 +18,38 @@
           </a>
 
           {{#title}}
-            <h1 class="post-title p-name entry-title">{{title}}</h1>
+            {{#metadata.in-reply-to}}
+            <a class="u-in-reply-to" href="{{metadata.in-reply-to}}" target="_blank" rel="in-reply-to"> 
+              <h1 class="link-title p-name">
+                {{title}} 
+                <span class="icn">→</span>
+              </h1>
+            </a>
+            {{/metadata.in-reply-to}}
+            {{^metadata.in-reply-to}}<h1 class="post-title p-name entry-title">{{title}}</h1>{{/metadata.in-reply-to}}
           {{/title}}
+
+          {{#metadata.like-of}}
+            <div class="mf-data p-summary"> <span style="color:#E24E42;">★</span> Liked the post 
+              <a class="u-like-of" href="{{metadata.like-of}}" rel="like-of">{{metadata.like-of}}</a>
+            </div>
+          {{/metadata.like-of}}
+
+          {{#metadata.in-reply-to}}
+            {{^title}}
+            <div class="mf-data"> 
+              <i class="fa fa-comments"></i> in reply to
+              <a class="u-in-reply-to" href="{{metadata.in-reply-to}}" rel="in-reply-to">
+                {{#metadata.in-reply-to-title}}
+                  {{metadata.in-reply-to-title}}
+                {{/metadata.in-reply-to-title}}
+                {{^metadata.in-reply-to-title}}
+                  {{metadata.in-reply-to}}
+                {{/metadata.in-reply-to-title}}                
+              </a>
+            </div>
+            {{/title}}
+          {{/metadata.in-reply-to}}
 
           <div class="e-content">{{{html}}}</div>
 
