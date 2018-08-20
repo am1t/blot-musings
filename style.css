@@ -33,7 +33,7 @@ body {
   font-feature-settings: "liga";
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: “liga” on;
-  color: #222;
+  color: #000;
   word-wrap: break-word;
 }
 
@@ -194,10 +194,13 @@ med {color: #000;font-size: 20px;font-family: "Open Sans", "Helvetica Neue", Hel
 a {
   color: #0366d6; /* 02569B */
   text-decoration: none;
-  text-shadow: .03em 0 #fff, -.03em 0 #fff, 0 .03em #fff, 0 -.03em #fff, .06em 0 #fff, -.06em 0 #fff, .09em 0 #fff, -.09em 0 #fff, .12em 0 #fff, -.12em 0 #fff, 0 0.03em #fff, 0 -.03em #fff, 0 .06em #fff, 0 -.06em #fff, 0 .08em #fff, 0 -.08em #fff;
   background-size: 0 0,0 0,0.07em 0.07em;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0% 90%, 100% 90%, 0% 95%;
+  /*text-shadow: .03em 0 #fff, -.03em 0 #fff, 0 .03em #fff, 0 -.03em #fff, .06em 0 #fff, -.06em 0 #fff, .09em 0 #fff, -.09em 0 #fff, .12em 0 #fff, -.12em 0 #fff, 0 0.03em #fff, 0 -.03em #fff, 0 .06em #fff, 0 -.06em #fff, 0 .08em #fff, 0 -.08em #fff;
+  background-size: 0 0,0 0,0.07em 0.07em;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 90%, 100% 90%, 0% 95%;*/
 }
 
 a:hover {
@@ -206,12 +209,12 @@ a:hover {
 
 a::selection {
   background: #b3d4fd;
-  text-shadow: .03em 0 #b3d4fd, -.03em 0 #b3d4fd, 0 .03em #b3d4fd, 0 -.03em #b3d4fd, .06em 0 #b3d4fd, -.06em 0 #b3d4fd, .09em 0 #b3d4fd, -.09em 0 #b3d4fd, .12em 0 #b3d4fd, -.12em 0 #b3d4fd;
+  /*text-shadow: .03em 0 #b3d4fd, -.03em 0 #b3d4fd, 0 .03em #b3d4fd, 0 -.03em #b3d4fd, .06em 0 #b3d4fd, -.06em 0 #b3d4fd, .09em 0 #b3d4fd, -.09em 0 #b3d4fd, .12em 0 #b3d4fd, -.12em 0 #b3d4fd;*/
 }
 
 a::-moz-selection {
   background: #b3d4fd;
-  text-shadow: .03em 0 #b3d4fd, -.03em 0 #b3d4fd, 0 .03em #b3d4fd, 0 -.03em #b3d4fd, .06em 0 #b3d4fd, -.06em 0 #b3d4fd, .09em 0 #b3d4fd, -.09em 0 #b3d4fd, .12em 0 #b3d4fd, -.12em 0 #b3d4fd;
+  /*text-shadow: .03em 0 #b3d4fd, -.03em 0 #b3d4fd, 0 .03em #b3d4fd, 0 -.03em #b3d4fd, .06em 0 #b3d4fd, -.06em 0 #b3d4fd, .09em 0 #b3d4fd, -.09em 0 #b3d4fd, .12em 0 #b3d4fd, -.12em 0 #b3d4fd;*/
 }
 
 h1 a {

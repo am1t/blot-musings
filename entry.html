@@ -7,8 +7,8 @@
       <div class="main">
         <article class="h-entry entry">
         {{#entry}}
-          <div class="p-author h-card" style="display: none;">
-            <a class= "u-url" href="https://www.amitgawande.com">Amit Gawande</a>
+          <div class="h-card p-author" style="display: none;">
+            <a rel="author" class= "p-name u-url" href="https://www.amitgawande.com">Amit Gawande</a>
             <img class="u-photo" src="/img/_headshot.jpeg" />
           </div>
           <a class="small date left margin u-url" href="{{url}}">
@@ -31,7 +31,14 @@
 
           {{#metadata.like-of}}
             <div class="mf-data p-summary"> <span style="color:#E24E42;">★</span> Liked the post 
-              <a class="u-like-of" href="{{metadata.like-of}}" rel="like-of">{{metadata.like-of}}</a>
+              <a class="u-like-of" href="{{metadata.like-of}}" rel="like-of">
+                {{#metadata.like-of-title}}
+                  {{metadata.like-of-title}}
+                {{/metadata.like-of-title}}
+                {{^metadata.like-of-title}}
+                  {{metadata.like-of}}
+                {{/metadata.like-of-title}}
+              </a>
             </div>
           {{/metadata.like-of}}
 
@@ -53,13 +60,14 @@
 
           <div class="e-content">{{{html}}}</div>
 
+          {{#metadata.photo}}
+            <p><img src="{{metadata.photo}}" {{#metadata.photo_alt}}alt="{{metadata.photo_alt}}"{{/metadata.photo_alt}}></p>
+          {{/metadata.photo}}
+
           {{#tags.length}}
-          <br />
-          <p>
             {{#tags}}
             <a class="small tag p-category" href="/tagged/{{slug}}">{{name}}</a>
             {{/tags}}
-          </p>
           {{/tags.length}}
 
           <div class="post-mentions" id="post-mentions" style="display:none">

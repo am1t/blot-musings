@@ -14,14 +14,22 @@
     <pubDate>{{#formatDate}}ddd, DD MMM YYYY HH:mm:ss ZZ{{/formatDate}}</pubDate>
     <dc:creator>Amit Gawande</dc:creator>
     <description>
+      <![CDATA[
       {{#metadata.in-reply-to}}{{^title}} 
-        ➥ In reply to &lt;a href="{{metadata.in-reply-to}}"&gt;
+        ➥ In reply to <a href="{{metadata.in-reply-to}}">
         {{#metadata.in-reply-to-title}}{{metadata.in-reply-to-title}}{{/metadata.in-reply-to-title}}
         {{^metadata.in-reply-to-title}}a post{{/metadata.in-reply-to-title}}
-        &lt;/a&gt;
+        </a>
       {{/title}}{{/metadata.in-reply-to}}
-      {{#metadata.like-of}} ★ Liked &lt;a href="{{metadata.like-of}}"&gt;{{metadata.like-of}}&lt;/a&gt;{{/metadata.like-of}}
+      {{#metadata.like-of}} ★ Liked <a href="{{metadata.like-of}}">
+        {{#metadata.like-of-title}}{{metadata.like-of-title}}{{/metadata.like-of-title}}
+        {{^metadata.like-of-title}}{{metadata.like-of}}{{/metadata.like-of-title}}
+      </a>{{/metadata.like-of}}
       {{{html}}}
+      {{#metadata.photo}}
+        <p><img src="{{metadata.photo}}" {{#metadata.photo_alt}}alt="{{metadata.photo_alt}}"{{/metadata.photo_alt}}></p>
+      {{/metadata.photo}}      
+      ]]>
     </description>
   </item>
   {{/recentEntries}}

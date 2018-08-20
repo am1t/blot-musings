@@ -44,7 +44,10 @@ $(document).ready(function(){
 					men_content = data.links[i].data.content;
 				}
   			$("ul#mentions-list").prepend( "<li class=\"mention\">"
-				+ "<div class=\"mention-author\"><i class=\"fa fa-comments\"></i> <a href=\"" + data.links[i].data.author.url + "\">"
+				+ "<div class=\"mention-author u-author\">" 
+				+ "<img src=\"" + data.links[i].data.author.photo + "\" class=\"u-photo\"" 
+				+ "title=\"" + data.links[i].data.author.name + "\" width=\"40\" style=\"margin-right:10px;border-radius:4px;\">" 
+				+ "<a href=\"" + data.links[i].data.author.url + "\">"
 				+ data.links[i].data.author.name + "</a> <span class=\"commented\">replied:</span></div>"
 				+ "<div class=\"mention-text\">" + men_content + "</div>"
 				+ "<a href=\"" + data.links[i].data.url + "\" class=\"small\">"

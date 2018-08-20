@@ -6,6 +6,7 @@
     <div class="container">
       <div class="main">
         {{#entries}}
+        {{^metadata.is-social}}
         <article class="h-entry entry">
           <a class="small date left margin" href="{{url}}">{{#formatDate}} ddd, MMM D, YYYY {{/formatDate}}</a>
           {{#title}}
@@ -21,7 +22,14 @@
           {{/title}}
           {{#metadata.like-of}}
             <div class="mf-data p-summary"> <span style="color:#E24E42;">★</span> Liked the post 
-              <a class="u-like-of" href="{{metadata.like-of}}" rel="like-of">{{metadata.like-of}}</a>
+              <a class="u-like-of" href="{{metadata.like-of}}" rel="like-of">
+                {{#metadata.like-of-title}}
+                  {{metadata.like-of-title}}
+                {{/metadata.like-of-title}}
+                {{^metadata.like-of-title}}
+                  {{metadata.like-of}}
+                {{/metadata.like-of-title}}
+              </a>
             </div>
           {{/metadata.like-of}}
 
@@ -41,11 +49,15 @@
           {{/title}}
           {{/metadata.in-reply-to}}          
           {{{html}}}
+          {{#metadata.photo}}
+            <p><img src="{{metadata.photo}}" {{#metadata.photo_alt}}alt="{{metadata.photo_alt}}"{{/metadata.photo_alt}}></p>
+          {{/metadata.photo}}          
           {{#tags}}
           <a class="small tag" href="/tagged/{{slug}}">{{name}}</a>
           {{/tags}}
           <div class="clear"></div>
         </article>
+        {{/metadata.is-social}}
         {{/entries}}
         {{#pagination}}
         <div class="pagination">

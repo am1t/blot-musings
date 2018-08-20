@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+    {{> header}}
+    <div class="container">
+      <div class="main">
+        {{#allEntries}}
+        {{#metadata.is-social}}
+        <article class="h-entry entry">
+          <a class="small date left margin" href="{{url}}">{{#formatDate}} ddd, MMM D, YYYY {{/formatDate}}</a>
+          {{#title}}
+            {{#metadata.in-reply-to}}
+            <a class="u-in-reply-to" href="{{metadata.in-reply-to}}" target="_blank" rel="in-reply-to"> 
+              <h1 class="link-title p-name">
+                {{title}} 
+                <span class="icn">→</span>
+              </h1>
+            </a>
+            {{/metadata.in-reply-to}}
+            {{^metadata.in-reply-to}}<h1 class="post-title p-name entry-title">{{title}}</h1>{{/metadata.in-reply-to}}
+          {{/title}}
+          {{#metadata.like-of}}
+            <div class="mf-data p-summary"> <span style="color:#E24E42;">★</span> Liked the post 
+              <a class="u-like-of" href="{{metadata.like-of}}" rel="like-of">
+                {{#metadata.like-of-title}}
+                  {{metadata.like-of-title}}
+                {{/metadata.like-of-title}}
+                {{^metadata.like-of-title}}
+                  {{metadata.like-of}}
+                {{/metadata.like-of-title}}
+              </a>
+            </div>
+          {{/metadata.like-of}}
+
+          {{#metadata.in-reply-to}}
+          {{^title}}
+          <div class="mf-data"> 
+            <i class="fa fa-comments"></i> in reply to
+            <a class="u-in-reply-to" href="{{metadata.in-reply-to}}" rel="in-reply-to">
+              {{#metadata.in-reply-to-title}}
+                {{metadata.in-reply-to-title}}
+              {{/metadata.in-reply-to-title}}
+              {{^metadata.in-reply-to-title}}
+                {{metadata.in-reply-to}}
+              {{/metadata.in-reply-to-title}}    
+            </a>
+          </div>
+          {{/title}}
+          {{/metadata.in-reply-to}}          
+          {{{html}}}
+          {{#metadata.photo}}
+            <p><img src="{{metadata.photo}}" {{#metadata.photo_alt}}alt="{{metadata.photo_alt}}"{{/metadata.photo_alt}}></p>
+          {{/metadata.photo}}          
+          {{#tags}}
+          <a class="small tag" href="/tagged/{{slug}}">{{name}}</a>
+          {{/tags}}
+          <div class="clear"></div>
+        </article>
+        {{/metadata.is-social}}
+        {{/allEntries}}
+        {{#pagination}}
+        <div class="pagination">
+          {{#previous}}
+            <a href="/page/{{previous}}">← Newer</a>
+          {{/previous}}
+          Page {{current}} of {{total}}
+          {{#next}}
+            <a href="/page/{{next}}">Older →</a>
+          {{/next}}
+        </div>
+        {{/pagination}}
+      </div>
+    </div>
+    {{> footer}}
+  </body>
+</html>
