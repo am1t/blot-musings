@@ -8,7 +8,6 @@
         {{#entries}}
         {{^metadata.is-social}}
         <article class="h-entry entry">
-          <a class="small date left margin" href="{{url}}">{{#formatDate}} ddd, MMM D, YYYY {{/formatDate}}</a>
           {{#title}}
             {{#metadata.in-reply-to}}
             <a class="u-in-reply-to" href="{{metadata.in-reply-to}}" target="_blank" rel="in-reply-to"> 
@@ -36,7 +35,7 @@
           {{#metadata.in-reply-to}}
           {{^title}}
           <div class="mf-data"> 
-            <i class="fa fa-comments"></i> in reply to
+            <i class="fa fa-comments"></i> In reply to
             <a class="u-in-reply-to" href="{{metadata.in-reply-to}}" rel="in-reply-to">
               {{#metadata.in-reply-to-title}}
                 {{metadata.in-reply-to-title}}
@@ -52,6 +51,10 @@
           {{#metadata.photo}}
             <p><img src="{{metadata.photo}}" {{#metadata.photo_alt}}alt="{{metadata.photo_alt}}"{{/metadata.photo_alt}}></p>
           {{/metadata.photo}}          
+          <span class="small" style="padding-right: 10px">
+            <i class="fa fa-calendar"></i> 
+            <a class="small date" href="{{url}}">{{#formatDate}} ddd, MMM D, YYYY {{/formatDate}}</a>
+          </span>          
           {{#tags}}
           <a class="small tag" href="/tagged/{{slug}}">{{name}}</a>
           {{/tags}}

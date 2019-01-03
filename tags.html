@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+    {{> header}}
+    <div class="container">
+      <div class="main">
+        <h1>Explore Posts by Tags</h1>
+        <div>
+          <p>
+          {{#all_tags}}
+          <a class="tag-list" href="/tagged/{{slug}}">{{name}}</a> &nbsp;  
+          {{/all_tags}}
+        </p>
+        </div>
+      </div>
+    </div>
+    {{> footer}}    
+  </body>
+</html>

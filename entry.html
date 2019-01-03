@@ -11,11 +11,6 @@
             <a rel="author" class= "p-name u-url" href="https://www.amitgawande.com">Amit Gawande</a>
             <img class="u-photo" src="/img/_headshot.jpeg" />
           </div>
-          <a class="small date left margin u-url" href="{{url}}">
-              <time class="dt-published" datetime="{{#formatDate}} DD MMM YYYY HH:MMz {{/formatDate}}">
-                {{#formatDate}} ddd, MMM D, YYYY {{/formatDate}}
-              </time>
-          </a>
 
           {{#title}}
             {{#metadata.in-reply-to}}
@@ -45,7 +40,7 @@
           {{#metadata.in-reply-to}}
             {{^title}}
             <div class="mf-data"> 
-              <i class="fa fa-comments"></i> in reply to
+              <i class="fa fa-comments"></i> In reply to
               <a class="u-in-reply-to" href="{{metadata.in-reply-to}}" rel="in-reply-to">
                 {{#metadata.in-reply-to-title}}
                   {{metadata.in-reply-to-title}}
@@ -63,6 +58,15 @@
           {{#metadata.photo}}
             <p><img src="{{metadata.photo}}" {{#metadata.photo_alt}}alt="{{metadata.photo_alt}}"{{/metadata.photo_alt}}></p>
           {{/metadata.photo}}
+
+          <span class="small" style="padding-right: 10px">
+            <i class="fa fa-calendar"></i> 
+            <a class="small date u-url" href="{{url}}">
+              <time class="dt-published" datetime="{{#formatDate}} DD MMM YYYY HH:MMz {{/formatDate}}">
+                {{#formatDate}} ddd, MMM D, YYYY {{/formatDate}}
+              </time>
+            </a>            
+          </span>             
 
           {{#tags.length}}
             {{#tags}}

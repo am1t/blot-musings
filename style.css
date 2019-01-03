@@ -4,7 +4,7 @@
 .small-caps {}
 
 /* Double quote (") marks */
-.pull-double{margin-left:-.45em}
+.pull-double{margin-left:-.20em}
 .push-double{margin-right:.45em}
 
 /* Single quote (') marks */
@@ -33,7 +33,8 @@ body {
   font-feature-settings: "liga";
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: “liga” on;
-  color: #000;
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: #333;
   word-wrap: break-word;
 }
 
@@ -65,10 +66,10 @@ div {
 }
 
 .header {margin-top: 48px;margin-bottom: 72px}
-.main {max-width: 60%;min-width: 600px}
+.main {max-width: 70%; min-width: 600px}
 .container {max-width: 1000px}
 .entry {margin: 48px 0 48px}
-.entry-title {font-size:22px; padding-bottom: 5px; border-bottom: 2px solid #e24e42;}
+.entry-title {font-size:26px; padding-bottom: 5px; border-bottom: 2px solid #e24e42;}
 .link-title { font-size: 18px; font-weight: 400; color:#e24e42; text-decoration: underline;}
 /* LAYOUT */
 
@@ -174,11 +175,13 @@ blockquote {
   font-size: 16px;
   border-left: 2px solid #0366d6;
 }
-blockquote.twitter-tweet p {
+blockquote .twitter-tweet p {
   color: #666;
   font-size: 16px;
   margin-top: 5px;
 }
+
+blockquote .pull-double{margin-left:0;}
 
 /*
 p .small-caps,
@@ -305,8 +308,8 @@ th, td {box-sizing: border-box;border: 1px solid #ddd;padding: 5px 12px 6px}
 /* LISTS */
 
 ul, ol {
-  margin-left: 0;
-  padding-left: 0;
+  margin-left: 24px;
+  padding-left: 0px;
   list-style-position: outside;
   margin-bottom: 24px;
 }
@@ -327,7 +330,17 @@ li {margin: 0; padding:5px 0;}
 
 /* IMAGES */
 
-img {vertical-align: middle;max-width: 100%;height: auto;}
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px gray;  
+}
+
+img.avatar{
+  box-shadow: none;
+}
 
 .image {
   position: relative;
@@ -440,7 +453,11 @@ input#search:focus {
     border-bottom: 1px solid #AEADAD;
     font-size: 16px;
 }
-.post-mentions ul {list-style:none; padding:0;}
+.post-mentions ul {
+  list-style:none; 
+  padding:0;
+  margin-left: 0;
+}
 
 .mention{
     font-size:16px;
@@ -466,6 +483,18 @@ input#search:focus {
 .commented {
   color:#666;
   text-transform: none;
+}
+
+a.tag-list {
+  color: #E24E42;
+  font-size: 24px;
+  text-decoration: underline;
+  margin-right: 20px;
+}
+
+a.tag-list:hover {
+  color: #0366D6;
+  text-decoration: none;
 }
 
 ::-webkit-input-placeholder {
@@ -537,7 +566,7 @@ input#search:focus {
 
 @media screen and (max-width: 976px) {
 
-  .main {max-width: 600px;min-width: 0}
+  .main {max-width: 95%; min-width: 0}
 
   .entry .margin {position: relative;top: auto;left: auto;right: auto;bottom: auto;}
 
@@ -559,12 +588,12 @@ input#search:focus {
   .wide, .wide.left, .wide.right {width: 100%;margin: 0}
   .wide.left .caption {margin-left: 0}
 
-  .date {position: absolute;top: -24px;left: 0;text-align: left;margin: 0}
+  .date {top: -24px;left: 0;text-align: left;margin: 0}
 }
 
 @media screen and (max-width: 730px) {
   .nav, #logo {margin-left: 60px}
-  ul, li {margin-left: 24px}
+  /*ul, li {margin-left: 24px; padding-left: 0px;}*/
   ul ul, ol ul, ol ol, ul ol {margin-left: 0}
   .nav .right {clear: both;float: none;margin-top: 3px}
   a.search {margin-left: 0}

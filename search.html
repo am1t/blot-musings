@@ -16,8 +16,9 @@
           {{/query}}
 
           {{#entries}}
-            <a href="{{url}}">{{title}}</a>
-            <span class="small">{{date}}</span>
+            <a href="{{url}}">{{date}}</a> &nbsp; 
+            {{#title}} {{.}} &nbsp;{{/title}} 
+            <span class="small">{{summary}}</span>
             <br />
           {{/entries}}
         </div>
