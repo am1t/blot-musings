@@ -1,0 +1,34 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "{{title}}",
+    "home_page_url": "{{{blogURL}}}",
+    "feed_url": "{{{blogURL}}}/archive/index.json",
+    "author": {
+        "name" : "Amit Gawande",
+        "url" : "https://www.amitgawande.com"
+    },
+    "items": [
+        {{#allEntries}}
+         {
+            "title": "{{title}}{{#metadata.in-reply-to}}{{#title}} →{{/title}}{{/metadata.in-reply-to}}",
+            "id": "{{{blogURL}}}{{{url}}}",
+            "url": "{{{blogURL}}}{{{url}}}",
+            "content_html": "{{#encodeJSON}}{{#metadata.in-reply-to}}{{^title}} 
+            ➥ In reply to <a href=\"{{metadata.in-reply-to}}\">
+            {{#metadata.in-reply-to-title}}{{metadata.in-reply-to-title}}{{/metadata.in-reply-to-title}}
+            {{^metadata.in-reply-to-title}}a post{{/metadata.in-reply-to-title}}
+            </a>
+          {{/title}}{{/metadata.in-reply-to}}
+          {{#metadata.like-of}}★ Liked <a href=\"{{metadata.like-of}}\">
+            {{#metadata.like-of-title}}{{metadata.like-of-title}}{{/metadata.like-of-title}}
+            {{^metadata.like-of-title}}{{metadata.like-of}}{{/metadata.like-of-title}}
+          </a>{{/metadata.like-of}}
+          {{{body}}}
+          {{#metadata.photo}}<p><img src={{metadata.photo}} 
+          {{#metadata.photo_alt}}alt=\"{{metadata.photo_alt}}\"{{/metadata.photo_alt}}></p>{{/metadata.photo}}
+          {{/encodeJSON}}",
+            "date_published": "{{#formatDate}}YYYY-MM-DDTHH:mm:ssZ{{/formatDate}}"
+        }{{^last}},{{/last}}
+        {{/allEntries}}
+    ]
+}
