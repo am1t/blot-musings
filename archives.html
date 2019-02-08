@@ -8,10 +8,12 @@
         <h1>Archives</h1>
         <div>
           {{#allEntries}}
+          {{^metadata.is-social}}
           <a href="{{url}}">{{date}}</a> &nbsp; 
           {{#title}} {{.}} &nbsp;{{/title}} 
-          <span class="small">{{summary}}</span>
+          <span class="small">{{{summary}}}</span>
           <br />
+          {{/metadata.is-social}}
           {{/allEntries}}
         </div>
       </div>
