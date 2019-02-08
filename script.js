@@ -4,7 +4,7 @@ var post_url = window.location.href;
 
 $(document).ready(function(){	
 	$("ul#mentions-list").empty();
-  $.getJSON("https://webmention.io/api/mentions?jsonp=?", {
+  $.getJSON("https://webmention.io/api/mentions?per-page=50&page=0&jsonp=?", {
     target: post_url
   }, function(data){
 		var social_media_likes = "";

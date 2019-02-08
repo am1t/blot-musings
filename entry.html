@@ -74,6 +74,27 @@
             {{/tags}}
           {{/tags.length}}
 
+          {{#metadata.twitter-link}}
+            <span class="small" style="padding-right: 10px;">|</span>
+            <a class="small" href="{{metadata.twitter-link}}" target="_blank"> <i class="fa fa-twitter"></i></a>
+          {{/metadata.twitter-link}}
+
+          {{#metadata.microblog-link}}
+            <span class="mb-block"><a class="small" href="{{metadata.microblog-link}}" target="_blank">
+              <span style="color:#E24E42;font-size: 14px;">Discuss on Micro.blog</span>
+              <img class="mblogo" src="https://help.micro.blog/assets/images/icons/web/icon.svg" alt="Discuss on Micro.blog" width="13" height="13" />
+            </a></span> 
+          {{/metadata.microblog-link}}          
+
+          <form  class="webmention-form" action="https://webmention.io/blog.amitgawande.com/webmention" method="post">
+            <div class="wm-form-label">Have you posted a <a href="https://indieweb.org/responses">response</a> to this? Provide the URL.</div>
+            <div class="form-fields">
+              <input type="url" name="source" placeholder="Your Post URL">
+              <input type="submit" value="Send Webmention">
+            </div>
+            <input type="hidden" name="target" value="{{{blogURL}}}{{{url}}}">
+          </form>
+
           <div class="post-mentions" id="post-mentions" style="display:none">
             <ul class="mentions-list" id="mentions-list"></ul>
           </div>
@@ -81,7 +102,7 @@
         {{/entry}}
         </article>
       </div>
-    </div>
-    {{> footer}}    
+    </div>   
   </body>
+  {{> footer}}   
 </html>
