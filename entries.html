@@ -58,6 +58,15 @@
           {{#tags}}
           <a class="small tag" href="/tagged/{{slug}}">{{name}}</a>
           {{/tags}}
+
+          {{#metadata.twitter-link}}
+            <a class="small" href="{{metadata.twitter-link}}" target="_blank" style="padding:2px"> <i class="fab fa-twitter"></i></a>
+          {{/metadata.twitter-link}}
+
+          {{#metadata.mastodon-link}}
+            <a class="small" href="{{metadata.mastodon-link}}" target="_blank" style="padding:2px"> <i class="fab fa-mastodon"></i></a>
+          {{/metadata.mastodon-link}}          
+
           <div class="clear"></div>
         </article>
         {{/metadata.is-social}}

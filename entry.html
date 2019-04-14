@@ -75,9 +75,12 @@
           {{/tags.length}}
 
           {{#metadata.twitter-link}}
-            <span class="small" style="padding-right: 10px;">|</span>
-            <a class="small" href="{{metadata.twitter-link}}" target="_blank"> <i class="fa fa-twitter"></i></a>
+            <a class="small" href="{{metadata.twitter-link}}" target="_blank" style="padding:2px"> <i class="fab fa-twitter"></i></a>
           {{/metadata.twitter-link}}
+
+          {{#metadata.mastodon-link}}
+            <a class="small" href="{{metadata.mastodon-link}}" target="_blank" style="padding:2px"> <i class="fab fa-mastodon"></i></a>
+          {{/metadata.mastodon-link}}
 
           {{#metadata.microblog-link}}
             <span class="mb-block"><a class="small" href="{{metadata.microblog-link}}" target="_blank">

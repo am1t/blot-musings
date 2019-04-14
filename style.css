@@ -397,7 +397,7 @@ iframe {width: 100%;}
 
 /* TWEETS */
 
-.entry .twitter-tweet {margin-left:-16px!important}
+.entry .twitter-tweet {margin-left:0px!important}
 
 /* MATH */
 
