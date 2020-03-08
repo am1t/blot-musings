@@ -2,6 +2,9 @@
 <html>
   {{> head}}
   <body>
+    <div class="theme-switcher">
+      <button class="dark-switch" type="button" value="Switch Mode"></button>
+    </div>
     {{> header}}
     <div class="container">
       <div class="main">
@@ -67,6 +70,13 @@
               </time>
             </a>            
           </span>             
+
+          {{#metadata.imgsrc}}
+          <span class="small" style="padding-right: 10px">
+            <i class="fa fa-image"></i>
+            <a href="{{metadata.imgsrc}}" class="small">Image Credit</a>
+          </span>
+          {{/metadata.imgsrc}}
 
           {{#tags.length}}
             {{#tags}}
