@@ -50,21 +50,24 @@ $(document).ready(function(){
 			var men_content = "";
 			if(activity_type && activity_type == "like"){
 				if(!social_media_likes){
-					social_media_likes = "<li class=\"mention-social\"><i class=\"fa fa-thumbs-up\"></i> ";
+					social_media_likes = "<li class=\"mention-social\"><span class=\"social-icn\">" 
+					+ "<i class=\"fa fa-thumbs-up\"></i> </span>";
 				}
 				social_media_likes = social_media_likes + 
 				"<a href=\"" + data.links[i].data.url + "\">"
 					+ data.links[i].data.author.name + "</a>, ";
 			} else if(activity_type && activity_type == "repost"){
 				if(!social_media_repost){
-					social_media_repost = "<li class=\"mention-social\"><i class=\"fa fa-twitter\"></i> ";
+					social_media_repost = "<li class=\"mention-social\"><span class=\"social-icn\">" 
+					+  "<i class=\"fab fa-twitter\"></i> </span>";
 				}
 				social_media_repost = social_media_repost + 
 				"<a href=\"" + data.links[i].data.url + "\">"
 					+ data.links[i].data.author.name + "</a>, ";
 			}else if(activity_type && activity_type == "link"){
 				if(!social_media_post){
-					social_media_post = "<li class=\"mention-social\"><i class=\"fa fa-link\"></i> ";
+					social_media_post = "<li class=\"mention-social\"><span class=\"social-icn\">" 
+					+  "<i class=\"fa fa-link\"></i> </span>";
 				}
 				social_media_post = social_media_post + 
 				"<a href=\"" + data.links[i].data.url + "\">"
@@ -84,15 +87,16 @@ $(document).ready(function(){
 				$("ul#mentions-list").prepend( "<li class=\"mention\">"
 					+ "<div class=\"mention-author u-author\">" 
 					+ "<img src=\"" + data.links[i].data.author.photo + "\" class=\"u-photo\"" 
-					+ "title=\"" + data.links[i].data.author.name + "\" width=\"40\" style=\"margin-right:10px;border-radius:4px;\">" 
+					+ "title=\"" + data.links[i].data.author.name + "\" width=\"48\" style=\"margin-right:10px;border-radius:4px;\">" 
 					+ "<a href=\"" + data.links[i].data.author.url + "\">"
-					+ data.links[i].data.author.name + "</a> <span class=\"commented\">replied:</span></div>"
-					+ "<div class=\"mention-text\">" + men_content + "</div>"
+					+ data.links[i].data.author.name + "</a> <span class=\"commented\">" 
+					+ data.links[i].data.author.url.split("://")[1] + "</span></div>"
+					+ "<div class=\"mention-text\"><p>" + men_content + "</p></div>"
+					+ "<div class=\"small mention-date\">→ "
 					+ "<a href=\"" + data.links[i].data.url + "\" class=\"small\">"
-					+ "<time>" + mention_date.getUTCDate() + "/" + (mention_date.getUTCMonth() + 1) 
-					+ "/" + mention_date.getUTCFullYear()
-				+ "</time></a>"
-				+ "</li>");
+					+ "<time>" + mention_date.toUTCString()
+					+ "</time></a></div>"
+					+ "</li>");
 			}
 		}
   		

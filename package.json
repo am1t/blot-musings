@@ -4,6 +4,12 @@
     "page_size": "20"
   },
   "views": {
+    "head.html": {
+      "partials": {
+        "title": null,
+        "description": null
+      }
+    },
     "archives.html": {
       "url": "/archives",
       "locals": {
@@ -13,103 +19,6 @@
       "partials": {
         "title": "Archives - {{{title}}}",
         "description": "All the entries posted on {{{title}}}",
-        "head": null,
-        "header": null,
-        "footer": null
-      }
-    },
-    "tagged.1.html": {
-      "partials": {
-        "head": null,
-        "header": null,
-        "footer": null
-      }
-    },
-    "head.html": {
-      "partials": {
-        "title": null,
-        "description": null
-      }
-    },
-    "tags.html": {
-      "url": "/tags",
-      "partials": {
-        "head": null,
-        "header": null,
-        "footer": null
-      }
-    },
-    "error.html": {
-      "locals": {
-        "pageTitle": "{{{error.title}}} - {{{title}}}",
-        "pageDescription": "Error on {{{title}}}"
-      },
-      "partials": {
-        "title": "{{{error.title}}} - {{{title}}}",
-        "description": "Error on {{{title}}}",
-        "head": null,
-        "header": null,
-        "footer": null
-      }
-    },
-    "tagged.html": {
-      "locals": {
-        "pageTitle": "Entries tagged {{{tag}}} from {{{title}}}",
-        "pageDescription": "All of the entries posted on {{{title}}} tagged {{{tag}}}"
-      },
-      "partials": {
-        "title": "Entries tagged {{{tag}}} from {{{title}}}",
-        "description": "All of the entries posted on {{{title}}} tagged {{{tag}}}",
-        "head": null,
-        "header": null,
-        "footer": null
-      }
-    },
-    "index.json": {
-      "url": "/feed.json"
-    },
-    "social.html": {
-      "url": "/social",
-      "locals": {
-        "pageTitle": "Social - {{{title}}}"
-      },
-      "partials": {
-        "title": "Social - {{{title}}}",
-        "head": null,
-        "header": null,
-        "footer": null
-      }
-    },
-    "entries.html": {
-      "locals": {
-        "pageTitle": "{{{title}}}",
-        "pageDescription": "The latest entries posted on {{{title}}}"
-      },
-      "partials": {
-        "title": "{{{title}}}",
-        "description": "The latest entries posted on {{{title}}}",
-        "head": null,
-        "header": null,
-        "footer": null
-      }
-    },
-    "on-this-day.html": {
-      "url": "/on-this-day",
-      "partials": {
-        "title": "On This Day | {{{title}}}",
-        "head": null,
-        "header": null,
-        "footer": null
-      }
-    },
-    "search.html": {
-      "locals": {
-        "pageTitle": "Search - {{{title}}}",
-        "pageDescription": "Seach all the entries posted on {{{title}}}"
-      },
-      "partials": {
-        "title": "Search - {{{title}}}",
-        "description": "Search all the entries posted on {{{title}}}",
         "head": null,
         "header": null,
         "footer": null
@@ -137,6 +46,90 @@
         "title": "Index of {{{path}}}",
         "description": "All the files and folders inside {{{path}}}",
         "head": null
+      }
+    },
+    "tagged.html": {
+      "locals": {
+        "pageTitle": "Entries tagged {{{tag}}} from {{{title}}}",
+        "pageDescription": "All of the entries posted on {{{title}}} tagged {{{tag}}}"
+      },
+      "partials": {
+        "title": "Entries tagged {{{tag}}} from {{{title}}}",
+        "description": "All of the entries posted on {{{title}}} tagged {{{tag}}}",
+        "head": null,
+        "header": null,
+        "footer": null
+      }
+    },
+    "tags.html": {
+      "url": "/tags",
+      "partials": {
+        "head": null,
+        "header": null,
+        "footer": null
+      }
+    },
+    "on-this-day.html": {
+      "url": "/on-this-day",
+      "partials": {
+        "title": "On This Day | {{{title}}}",
+        "head": null,
+        "header": null,
+        "footer": null
+      }
+    },
+    "error.html": {
+      "locals": {
+        "pageTitle": "{{{error.title}}} - {{{title}}}",
+        "pageDescription": "Error on {{{title}}}"
+      },
+      "partials": {
+        "title": "{{{error.title}}} - {{{title}}}",
+        "description": "Error on {{{title}}}",
+        "head": null,
+        "header": null,
+        "footer": null
+      }
+    },
+    "index.json": {
+      "url": "/feed.json"
+    },
+    "entries.html": {
+      "locals": {
+        "pageTitle": "{{{title}}}",
+        "pageDescription": "The latest entries posted on {{{title}}}"
+      },
+      "partials": {
+        "title": "{{{title}}}",
+        "description": "The latest entries posted on {{{title}}}",
+        "head": null,
+        "header": null,
+        "footer": null
+      }
+    },
+    "search.html": {
+      "locals": {
+        "pageTitle": "Search - {{{title}}}",
+        "pageDescription": "Seach all the entries posted on {{{title}}}"
+      },
+      "partials": {
+        "title": "Search - {{{title}}}",
+        "description": "Search all the entries posted on {{{title}}}",
+        "head": null,
+        "header": null,
+        "footer": null
+      }
+    },
+    "social.html": {
+      "url": "/social",
+      "locals": {
+        "pageTitle": "Social - {{{title}}}"
+      },
+      "partials": {
+        "title": "Social - {{{title}}}",
+        "head": null,
+        "header": null,
+        "footer": null
       }
     }
   }

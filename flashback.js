@@ -1,4 +1,4 @@
-let json_feed_url = "https://blog.amitgawande.com/feed.json";
+let json_feed_url = "https://www.amitgawande.com/feed.json";
 let tz = "Asia/Kolkata";
 let container = document.getElementById('on-this-day');
 
