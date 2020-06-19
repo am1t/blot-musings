@@ -49,7 +49,7 @@
   position: absolute;
   position: absolute;
   top: 56px;
-  right: 195px;
+  right: 290px;
 }
 
 .dark-switch {  
@@ -84,7 +84,14 @@ body {
 .clear {width: 100%;clear: both;float: none;display: block;height: 0}
 
 .small,
-.caption {text-decoration: none; font-size: 13px;font-family: "Open Sans", "Helvetica Neue", Helvetica, Georgia, sans-serif;color: var(--meta-color);font-weight: 500;}
+.post-date
+.caption {text-decoration: none; font-family: "Open Sans", "Helvetica Neue", Helvetica, Georgia, sans-serif;color: var(--meta-color);font-weight: 500;}
+
+.small,
+.caption { font-size: 13px; }
+
+.post-date { font-size: 16px; }
+.post-date a { color: var(--meta-color); }
 
 .caption {
   line-height: 18px;
@@ -109,7 +116,7 @@ div {
 }
 
 .header {margin-top: 48px;margin-bottom: 72px}
-.main {max-width: 70%; min-width: 600px}
+.main {max-width: 55%; min-width: 600px}
 /* .container {max-width: 1000px} */
 .entry {margin: 30px 0;}
 .page-title {
@@ -210,13 +217,25 @@ p {
 
 article {
   padding-bottom: 5px;
-  border-bottom: 1px solid var(--secondary-color);
+  /*border-bottom: 1px solid var(--meta-color);*/
 }
 
-h1 {font-size: 26px;line-height: 36px;font-weight: bold;margin-bottom: 24px;}
+article:after {
+  content: ""; 
+  display: block; 
+  margin: 0 auto; 
+  width: 50%; 
+  padding-top: 30px; 
+  /*border-bottom: 1px solid var(--meta-color);*/
+}
+
+h1 {font-size: 26px;line-height: 36px;font-weight: bold;margin-bottom: 4px;}
 h2 {font-size: 22px;line-height:27px;font-weight: bold;margin: 36px 0 24px;text-decoration: underline;}
 h3 {font-size: 20px;line-height:24px;font-weight: bold;margin-bottom: 24px;}
 h4, h5, h6 {font-size: 17px;font-weight: bold;line-height: 24px;margin: 48px 0 24px}
+
+h1 a {color: var(--font-color);}
+h1 a:hover{color: var(--font-color);}
 
 blockquote {
   padding: 8px 0 8px 10px;
@@ -540,6 +559,17 @@ input#search:focus {
     font-size: 16px;
     line-height: 24px;
 }
+
+.mention-header {
+  padding-top: 15px;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #949494;
+  margin-left: 54px;
+  padding-left: 5px;
+}
+
 .post-mentions ul {
   list-style:none; 
   padding:0;
@@ -578,6 +608,7 @@ input#search:focus {
 .mention-social{
     color:var(--meta-color);
     font-size: 14px;
+    margin-left: 54px;
     padding-bottom: 10px;
     border-bottom: 0.2px solid var(--meta-color);
 }
@@ -683,6 +714,19 @@ a.tag-list:hover {
 .now-metadata {
 	color:#666; 
 	margin: 5px auto 0;
+}
+
+.now-hl { 
+	font-size: 14px; 
+	color: #e24e42; 
+  margin: 5px auto 0;
+  padding: 0 5px;	
+  background-color: #fff5b8;
+	border-radius: 3px;
+}
+
+.utterances {
+  max-width: 1000px;
 }
 
 ::-webkit-input-placeholder {
@@ -798,6 +842,7 @@ a.tag-list:hover {
 
   .sitehead {font-size: 42px;}
   .sitebyline {font-size: 22px;}
+  .container {padding: 24px;}
 }
 
 @media screen and (max-width: 730px) {
@@ -811,14 +856,17 @@ a.tag-list:hover {
   .dark-switch {width: 32px;height: 32px;}  
   .sitehead {font-size: 42px;}
   .sitebyline { font-size: 22px;}
+  .container {padding: 24px;}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
   .entry .twitter-tweet {margin-left: 0!important}
   .header {margin: 9px auto -12px}
   .mb-block {display:none;}
   .theme-switcher {top: 18px;right: 12px;}
   .dark-switch {width: 24px;height: 24px;} 
+  h1 { font-size: 24px; }
+  .container { padding: 0 12px;}
 }
 
 {{#plugins.codeHighlighting.enabled}}

@@ -20,8 +20,16 @@
               </h1>
             </a>
             {{/metadata.in-reply-to}}
-            {{^metadata.in-reply-to}}<h1 class="post-title p-name entry-title">{{title}}</h1>{{/metadata.in-reply-to}}
+            {{^metadata.in-reply-to}}
+              <h1 class="post-title p-name entry-title">
+                <a href="{{url}}">{{title}}</a>
+              </h1>
+            {{/metadata.in-reply-to}}
           {{/title}}
+          <span class="post-date">
+            <!--<span class="social-icn"><i class="fa fa-calendar"></i></span>-->
+            <a class="date u-url" href="{{url}}">{{#formatDate}} MMMM D, YYYY {{/formatDate}}</a>
+          </span> 
           {{#metadata.like-of}}
             <div class="mf-data p-summary"> <span style="color:#E24E42;">★</span> Liked the post 
               <a class="u-like-of" href="{{metadata.like-of}}" rel="like-of">
@@ -54,21 +62,18 @@
           {{#metadata.photo}}
             <p><img src="{{metadata.photo}}" {{#metadata.photo_alt}}alt="{{metadata.photo_alt}}"{{/metadata.photo_alt}}></p>
           {{/metadata.photo}}          
-          <span class="small" style="padding-right: 10px">
-            <span class="social-icn"><i class="fa fa-calendar"></i></span>
-            <a class="small date" href="{{url}}">{{#formatDate}} ddd, MMM D, YYYY {{/formatDate}}</a>
-          </span>          
-          {{#tags}}
-          <a class="small tag" href="/tagged/{{slug}}">{{name}}</a>
+                   
+          <!--{{#tags}}
+          <a class="small tag p-category" href="/tagged/{{slug}}">{{name}}</a>
           {{/tags}}
 
           {{#metadata.twitter-link}}
-            <a class="small" href="{{metadata.twitter-link}}" target="_blank" style="padding:2px"> <i class="fab fa-twitter"></i></a>
+            <a class="small u-syndication" href="{{metadata.twitter-link}}" target="_blank" style="padding:2px"> <i class="fab fa-twitter"></i></a>
           {{/metadata.twitter-link}}
 
           {{#metadata.mastodon-link}}
-            <a class="small" href="{{metadata.mastodon-link}}" target="_blank" style="padding:2px"> <i class="fab fa-mastodon"></i></a>
-          {{/metadata.mastodon-link}}          
+            <a class="small u-syndication" href="{{metadata.mastodon-link}}" target="_blank" style="padding:2px"> <i class="fab fa-mastodon"></i></a>
+          {{/metadata.mastodon-link}} -->      
 
           <div class="clear"></div>
         </article>

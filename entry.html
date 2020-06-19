@@ -88,20 +88,24 @@
 
             {{#tags.length}}
               {{#tags}}
-              <a class="small tag p-category" href="/tagged/{{slug}}">{{name}}</a>
+              <a class="small tag p-category u-category" href="/tagged/{{slug}}">{{name}}</a>
               {{/tags}}
             {{/tags.length}}
 
             {{#metadata.twitter-link}}
-              <a class="small" href="{{metadata.twitter-link}}" target="_blank" style="padding:2px"> <i class="fab fa-twitter"></i></a>
+              <a class="small u-syndication" href="{{metadata.twitter-link}}" target="_blank" style="padding:2px"> <i class="fab fa-twitter"></i></a>
             {{/metadata.twitter-link}}
 
             {{#metadata.mastodon-link}}
-              <a class="small" href="{{metadata.mastodon-link}}" target="_blank" style="padding:2px"> <i class="fab fa-mastodon"></i></a>
+              <a class="small u-syndication" href="{{metadata.mastodon-link}}" target="_blank" style="padding:2px"> <i class="fab fa-mastodon"></i></a>
             {{/metadata.mastodon-link}}
 
+            {{#metadata.rsvp}}
+              <span class="p-rsvp" style="display:none">{{metadata.rsvp}}</span>
+            {{/metadata.rsvp}}            
+
             {{#metadata.microblog-link}}
-              <span class="mb-block"><a class="small" href="{{metadata.microblog-link}}" target="_blank">
+              <span class="mb-block"><a class="small u-syndication" href="{{metadata.microblog-link}}" target="_blank">
                 <span style="color:#E24E42;font-size: 14px;">Discuss on Micro.blog</span>
                 <img class="mblogo" src="https://help.micro.blog/assets/images/icons/web/icon.svg" alt="Discuss on Micro.blog" width="13" height="13" />
               </a></span> 
@@ -110,16 +114,28 @@
           
           {{^page}}
           <div class="post-mentions" id="post-mentions">
-            <form  class="webmention-form" action="https://webmention.io/blog.amitgawande.com/webmention" method="post">
+            <!--<form  class="webmention-form" action="https://webmention.io/blog.amitgawande.com/webmention" method="post">
               <div class="wm-form-label">Have you posted a <a href="https://indieweb.org/responses">response</a> to this? Provide the URL.</div>
               <div class="form-fields">
                 <input type="url" name="source" placeholder="Your Post URL">
                 <input type="submit" value="Send Webmention">
               </div>
               <input type="hidden" name="target" value="{{{blogURL}}}{{{url}}}">
-            </form>
-
+            </form> -->
+            <div class="mention-header" id="mention-header" style="display: none;">
+              <span style="font-weight: 700;"><span id="mentions-count"></span> Webmentions</span> - 
+              <span style="font-style: italic;font-weight: 400;">powered by Webmention.io</span>
+            </div>
             <ul class="mentions-list" id="mentions-list"></ul>
+
+            <script src="https://utteranc.es/client.js"
+              repo="am1t/musings-comments"
+              issue-term="pathname"
+              label="comment"
+              theme="github-light"
+              crossorigin="anonymous"
+              async>
+            </script>            
           </div>
           {{/page}}
 
